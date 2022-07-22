@@ -51,7 +51,7 @@ public class UserRegister  {
 				 System.out.println(userList.get(i).getName()+"님");
 				}
 			}
-		}System.out.println("환영합니다.");
+		}System.out.println("환영합니다."); //마이페이지 갈수있겠금==>
 		
 		
 	}
