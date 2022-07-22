@@ -2,7 +2,7 @@ package laundryroom;
 
 public abstract class Cloth {
 	private String type;
-	private int clothes_kg;
+	private double weight;
 	private int price;
 	
 	public String getType() {
@@ -13,12 +13,12 @@ public abstract class Cloth {
 		this.type = type;
 	}
 
-	public int getClothes_kg() {
-		return clothes_kg;
+	public double getWeight() {
+		return weight;
 	}
 
-	public void setClothes_kg(int clothes_kg) {
-		this.clothes_kg = clothes_kg;
+	public void setWeight(double Weight) {
+		this.weight = weight;
 	}
 
 	public int getPrice() {
@@ -29,7 +29,7 @@ public abstract class Cloth {
 		this.price = price;
 	}
 
-	abstract public void Laundry (String a, int b,int c);
+	abstract public void Laundry (String a, double b,int c);
 	
 	
 	

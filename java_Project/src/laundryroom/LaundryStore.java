@@ -18,10 +18,8 @@ public class LaundryStore {
 	public static void main(String[] args) {
 	
 		//여기서 if문을 사용해서  돌리면 될거같습니다.
-		
-		Bedding.BeddingRegister();
-		Pants.PantsRegister();
-		Shirts.ShirtsRegister();
+		LaundryInfo li=new LaundryInfo();
+		li.LaundryMenu();
 		
 
 	}
