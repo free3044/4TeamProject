@@ -11,7 +11,7 @@ public class LaundryStore {
 		System.out.println("5.세탁물 정보");//아니면 내정보로 해서 사용자정보와 세탁물정보 까지 가능?
 		System.out.println("6.가져가야하는 날짜?");
 		System.out.println("9.끝내기");
-	}
+	}// 수정
 
 	
 	//옷부분에서 반복되는 코드를 없애고 한곳으로 몰수있을까?
