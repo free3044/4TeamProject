@@ -4,7 +4,7 @@ import java.util.*;
  * 
  */
 public class LaundryInfo extends Cloth {
-	public void Laundry(String type, double weight, int price) {
+	public void Laundry(String type, int weight, int price) {
 		
 	}
 	public static void LaundryMenu() {
@@ -44,41 +44,41 @@ public class LaundryInfo extends Cloth {
 			
 	}
 	
-	public static void StandardRegister() {
-		Scanner sc=new Scanner(System.in);
-		
-		LaundryInfo li=new LaundryInfo();//LaundryInfo의 변수 li
-		System.out.println("--표준 세탁--");
-		System.out.println();
-		li.setType(sc.next());
-		System.out.println("세탁물의 무게를 입력해주세요");
-		li.setWeight(sc.nextDouble());
-		li.setPrice(1000);
-		System.out.println("등록이 완료되었습니다.");
-	}
-	
-	public static void DryRegister() {
-		Scanner sc=new Scanner(System.in);
-		LaundryInfo li=new LaundryInfo();//LaundryInfo의 변수 li
-		System.out.println("--드라이 클리닝--");
-		li.setType(sc.next());
-		System.out.println("갯수를 입력해주세요");
-		li.setWeight(sc.nextDouble());
-		li.setPrice(5000);
-		System.out.println("등록이 완료되었습니다.");
-
-	}
-	
-	public static void BeddingRegister() {
-		Scanner sc=new Scanner(System.in);
-		LaundryInfo li=new LaundryInfo();//LaundryInfo의 변수 li
-		System.out.println("--이불 세탁--");
-		li.setType(sc.next());
-		System.out.println("세탁물의 무게를 입력해주세요");
-		li.setWeight(sc.nextDouble());
-		li.setPrice(3000);
-		System.out.println("등록이 완료되었습니다.");
-
-	}
+//	public static void StandardRegister() {
+//		Scanner sc=new Scanner(System.in);
+//		
+//		LaundryInfo li=new LaundryInfo();//LaundryInfo의 변수 li
+//		System.out.println("--표준 세탁--");
+//		System.out.println();
+//		li.setType(sc.next());
+//		System.out.println("세탁물의 무게를 입력해주세요");
+//		li.setWeight(sc.nextInt());
+//		li.setPrice(1000);
+//		System.out.println("등록이 완료되었습니다.");
+//	}
+//	
+//	public static void DryRegister() {
+//		Scanner sc=new Scanner(System.in);
+//		LaundryInfo li=new LaundryInfo();//LaundryInfo의 변수 li
+//		System.out.println("--드라이 클리닝--");
+//		li.setType(sc.next());
+//		System.out.println("갯수를 입력해주세요");
+//		li.setWeight(sc.nextInt());
+//		li.setPrice(5000);
+//		System.out.println("등록이 완료되었습니다.");
+//
+//	}
+//	
+//	public static void BeddingRegister() {
+//		Scanner sc=new Scanner(System.in);
+//		LaundryInfo li=new LaundryInfo();//LaundryInfo의 변수 li
+//		System.out.println("--이불 세탁--");
+//		li.setType(sc.next());
+//		System.out.println("세탁물의 무게를 입력해주세요");
+//		li.setWeight(sc.nextInt());
+//		li.setPrice(3000);
+//		System.out.println("등록이 완료되었습니다.");
+//
+//	}
 
 }
