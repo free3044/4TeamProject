@@ -2,32 +2,60 @@ package laundryroom;
 import java.util.*;
 
 public class LaundryStore {
-	public void showMenu() {
+	
+	public static void showMenu() {
 		System.out.println("메뉴를 선택하세요");
-		System.out.println("1.로그인");
-		System.out.println("2.사용자 등록");
-		System.out.println("3.사용자 정보");
-		System.out.println("4.세탁물 등록");
-		System.out.println("5.세탁물 정보");//아니면 내정보로 해서 사용자정보와 세탁물정보 까지 가능?
-		System.out.println("6.가져가야하는 날짜?");
+		System.out.println("1.회원가입");
+		System.out.println("2.로그인");
+		System.out.println("3.세탁물 등록"); 
+		System.out.println("4.마이페이지");
+		System.out.println("5.회원정보 수정, 삭제");
+		System.out.println("6.모든 회원정보 출력");
 		System.out.println("9.끝내기");
-	}// 수정
+	}
 
 	
 	//옷부분에서 반복되는 코드를 없애고 한곳으로 몰수있을까?
 	public static void main(String[] args) {
-	
-		//여기서 if문을 사용해서  돌리면 될거같습니다.
-<<<<<<< HEAD
-		LaundryInfo.LaundryMenu();
-=======
->>>>>>> c32563a78a88ed5b7c38e92489d417ace4d9d00c
+		Scanner sc=new Scanner(System.in);
+		UserRegister ur=new UserRegister();
+		int num=0;
+		do {
+			LaundryStore.showMenu();
+			num=sc.nextInt();
+			switch(num) {
+			case 1:
+				ur.Account();
+				break;
+			case 2:
+				ur.Join();
+				break;
+			case 3:
+				ur.LaundryMenu();
+				break;
+			case 4:
+				
+			case 5:
+				System.out.println("회원정보 수정 및 삭제 입니다. \n 1.수정   2.삭제");
+				int num2=sc.nextInt();
+				if (num2==1) {
+					ur.UpdateUser();
+					break;
+				}else if (num2==2) {
+					ur.deleteUser();
+					break;
+				}else System.out.println("초기로 돌아갑니다.");
+					break;
+			case 6:
+				
+			
+			
+			}
+		}while(num!=9);
 		
-		Bedding.BeddingRegister();
-		Pants.PantsRegister();
-		Shirts.ShirtsRegister();
 		
 
 	}
 
 }
+//

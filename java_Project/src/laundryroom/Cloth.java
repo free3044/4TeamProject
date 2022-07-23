@@ -1,10 +1,26 @@
 package laundryroom;
 
-public abstract class Cloth {
+public  class Cloth {
 	private String type;
 	private int weight;
 	private int price;
+	private User user;
 	
+	public Cloth (String type,int weight,int price ,User user) {
+		this.type=type;
+		this.weight=weight;
+		this.price=price;
+		this.user=user;
+	}
+	
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 	public String getType() {
 		return type;
 	}
@@ -13,7 +29,7 @@ public abstract class Cloth {
 		this.type = type;
 	}
 
-	public int getCWeight() {
+	public int getWeight() {
 		return weight;
 	}
 
@@ -29,7 +45,9 @@ public abstract class Cloth {
 		this.price = price;
 	}
 
-	abstract public void Laundry (String a, int b,int c);
+	
+		
+		
 	
 	
 	
