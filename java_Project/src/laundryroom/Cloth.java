@@ -12,7 +12,9 @@ public  class Cloth {
 		this.price=price;
 		this.user=user;
 	}
-	
+	public String toString() {
+		return "세탁물 정보: "+type+"\n세탁물 무게: "+weight+"\n가격: "+price+"원 입니다.";
+	}
 	public User getUser() {
 		return user;
 	}

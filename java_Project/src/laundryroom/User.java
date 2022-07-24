@@ -8,12 +8,16 @@ public class User {
 	private int phoneNumber;
 	private String address;
 	
+	
 	public User(String id,String password,String name, String address, int phoneNumber) {
 		this.id=id;
 		this.password=password;
 		this.name=name;
 		this.phoneNumber=phoneNumber;
 		this.address=address;
+	}
+	public String toString () {
+		return "이름 :"+name+"\n연락처: "+phoneNumber+"\n주소 :"+address;
 	}
 	
 	
