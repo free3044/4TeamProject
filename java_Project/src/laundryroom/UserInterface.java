@@ -1,3 +1,10 @@
+/** UserInterface
+ *  UserRegister클래스를 상속하는 부모클래스 입니다.
+ *  
+ *  
+ * */
+
+
 package laundryroom;
 
 public interface UserInterface {
