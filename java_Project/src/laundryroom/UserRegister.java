@@ -1,68 +1,16 @@
 package laundryroom;
 import java.util.*;
-/**UserRegister class는 프로그램에 사용되는 메소드를 모으는 곳입니다. 
- * UserInterface를 상속받아 메소드의 이름이 바뀌지 않게 했습니다.
- * 클래스에서 선언한 변수는 
- *  ArrayList userList : 회원가입을 할 때 저장되는 List입니다.
- *  ArrayList clothList : 세탁물 등록을 할 때 저장되는 List입니다.
- *  Scanner sc : 프로그램 사용 시 입력합니다.
- *  User login : 사용자가 로그인을 할때 저장되는 변수입니다.
- *  Cloth laundry : 세탁물을 등록할 때 사용하는 변수입니다.
- *  1. Account()
- *  	- 회원가입을 할때 사용되는 메소드입니다.
- *  	- 기본적으로 ID, password, 이름, 주소, 연락처를 입력받습니다.
- *  	- 회원가입을 할때 중복되는 아이디가 없도록 사용자정의 예외를 발생시켜
- *  	  출력문을 나타냅니다. 
- *  	- 입력을 다받으면 User클래스를 기준으로 ArrayList에 저장됩니다.
- *  2. Join()
- *  	- 로그인을 할 때 사용되는 메소드입니다.
- *  	- boolean bl,bl2의 변수를 사용합니다
- *  	- Id와 password를 입력합니다.
- *  	- bl은 아이디를 체크하고 bl2는 비밀번호를 확인합니다.
- *  	- if문에서 true면 변수 login에 회원가입한 정보가 저장됩니다.
- *  	- EveryInfo()를 제외한 모든 메소드는 로그인을 통해야 작동됩니다.
- *  3. UpdateUser()
- *  	- 사용자의 정보를 변경하기 위한 메소드입니다.
- *  	- int num은 변경하고싶은 정보를 선택하는 변수입니다.
- *  	- 정보의 변경을 위해 현재 저장되어있는 데이터에 set타입을 사용하여 덮어씌었습니다.
- *  4. deleteUser()
- *  	- 사용자 정보를 삭제하는 메소드입니다.
- *  	- int num은 재요청을 위한 변수입니다.
- *  	- 갑작스런 삭제를 방지하기위해 num을 사용하여 재요청을 한 뒤에 삭제를 합니다.
- *  5. LaundryMenu()
- *  	- 세탁물 등록을 위한 메소드입니다.
- *  	- int num은 세탁물 선택을 위한 변수입니다.
- *  	- 세탁물을 등록하면 ArrayList에 저장되지만 재방문이 있을 수 있기에 set()을 사용하였습니다.
- *  	- 같은 사용자가 등록하면 전기록에 덮어쓰여집니다.
- *  	- 등록을 완료하면 사용자가 등록한 정보를 출력합니다.
- *  6. Mypage()
- *  	- 사용자의 정보를 확인하기 위한 메소드입니다.
- *  	- int num은 마이페이지에서 선택하기 위한 변수입니다.
- *  	- 현재 사용자의 정보나 세탁물 정보를 확인할수있습니다.
- *  	- 사용자 정보는 비밀번호를 제외한 정보를 볼수있게 했습니다
- *  	- 세탁물 정보는 타입, 무게 또는 벌, 가격을 볼수있게 했습니다.
- *  	- 세탁물을 등록을 안하고 확인을 하면 Cloth laundry에 의해 기본값으로 출력됩니다. 
- *  7. EveryInfo()
- *  	- 모든 사용자와 세탁물을 볼수있는 메소드입니다.
- *  	- 출력시 모든정보를 출력하며 
- *  	- 만약 세탁물을 한번도 등록한 사람이 아니라면 예외처리를 사용해 메세지를 출력하게 했습니다.
- *  8. Logout()
- *  	- 로그아웃을 할 수 있는 메소드입니다.
- *  	- int num은 재요청을 위한 변수입니다.
- *  	- 로그아웃을 할 경우 login의 값이 null값으로 되며 다른 메뉴를 사용할수없습니다.
- *  	- 하지만 userList에 데이터는 보관이 되어있어서 데이터가 손실되지 않기에 재 로그인이 가능합니다.
- *  9. User findById(String id, String password)
- *  	- 로그인을 위한 메소드입니다.
- *  	- userList에 String id와 password가 동일한 배열에 들어가있는지 확인합니다.
- *  	- 또한 id와 password가 들어가 있는 userList를 출력합니다. 
- *  
+/**UserRegister 클래스입니다. UserInterface에 상속받습니다.
  * */
 public class UserRegister implements UserInterface {
-	//1] 회원가입 시스템 
-	//1-1] 회원가입1 전체내용저장 2 아이디 비번으로 로그인을 해야함 
-	//2] 배열 등록 (텍스트로 저장할수있을까?)
-	//3] 로그인 시스템 쌍으로 등록해야한다 비밀번호 까지 등록
-	//4] 로그인 한 다음 개인정도 출력??
+	/**@param 프로그램에 사용되는 메소드를 모으는 곳입니다. 
+	 * @see UserInterface
+	 * @serialField ArrayList userList 회원가입을 할 때 저장되는 List입니다.
+	 * @serialField ArrayList clothList 세탁물 등록을 할 때 저장되는 List입니다.
+	 *  Scanner sc : 프로그램 사용 시 입력합니다.
+	 *  User login : 사용자가 로그인을 할때 저장되는 변수입니다.
+	 *  Cloth laundry : 세탁물을 등록할 때 사용하는 변수입니다.
+	 * */
 	
 	List<User> userList=new ArrayList<>();
 	List<Cloth> clothList=new ArrayList<>();
@@ -73,10 +21,13 @@ public class UserRegister implements UserInterface {
 	
 	@Override
 	public void Account() {
+		/**@param 회원가입을 할때 사용되는 메소드입니다.
+ 		 *기본적으로 ID, password, 이름, 주소, 연락처를 입력받습니다.
+ 		 *입력을 다받으면 User클래스를 기준으로 ArrayList에 저장됩니다.*/
 		System.out.println("ID를 입력하십시오=>");
 		
 		String id=sc.next();
-		try {
+		try {/**@throws 사용자 정의 예외를 만들어 같은아이디가있을경우 예외처리합니다.*/
 			for (int i=0;i<userList.size();i++) {
 				boolean bool=userList.get(i).getId().equals(id);
 				if (bool==true) 
@@ -96,7 +47,7 @@ public class UserRegister implements UserInterface {
 		System.out.println("주소을 입력 하십시오=>");
 		String address=sc.next();
 		User user=new User(id,password,name,address,phoneNumber);
-		userList.add(user);
+		userList.add(user); 
 		System.out.println(name+"님 회원이 되신것을 축하합니다.");
 		System.out.println(userList.size()+"번째 회원입니다.");
 		
@@ -105,6 +56,9 @@ public class UserRegister implements UserInterface {
 	
 	@Override
 	public void Join() {
+		/**@param 로그인을 할 때 사용되는 메소드입니다.
+ *  	- @param boolean bl,bl2의 변수를 사용합니다. bl은 아이디를 체크하고 bl2는 비밀번호를 확인합니다.
+ *  	- EveryInfo()를 제외한 모든 메소드는 로그인을 통해야 작동됩니다.*/
 		boolean bl=false; 
 		boolean bl2=false; 
 		while(!(bl==true && bl2==true)) {
@@ -113,7 +67,7 @@ public class UserRegister implements UserInterface {
 			System.out.println("비밀번호를 입력해 주세요=>");
 			String password=sc.next();
 			for (int i=0;i<userList.size();i++) {
-				
+				/**@param if문에서 true면 변수 login에 회원가입한 정보가 저장됩니다.*/
 				bl=userList.get(i).getId().equals(id);
 				bl2=userList.get(i).getPassword().equals(password);
 				
@@ -128,6 +82,8 @@ public class UserRegister implements UserInterface {
 	
 	@Override
 	public void UpdateUser() {
+		/**@param 사용자의 정보를 변경하기 위한 메소드입니다.
+		 * @param int num은 변경하고싶은 정보를 선택하는 변수입니다.*/
 		System.out.println("회원 정보 변경 입니다.");
 		int num=0;
 		do {
@@ -139,6 +95,7 @@ public class UserRegister implements UserInterface {
 				System.out.println("변경하시려는 항목을 선택하세요");
 				System.out.println("1.비밀번호 변경 2.주소변경 3.연락처변경");
 			num=sc.nextInt();
+			/**@param 정보의 변경을 위해 현재 저장되어있는 데이터에 set타입을 사용하여 덮어씌었습니다.*/
 			if(num==1) {
 				System.out.println("비밀번호 변경입니다.");
 				System.out.println("변경하시려는 비밀번호를 입력하세요");
@@ -164,6 +121,8 @@ public class UserRegister implements UserInterface {
 	}
 	@Override
 	public void deleteUser() {
+		/** @param 사용자 정보를 삭제하는 메소드입니다.
+		 * @param int num은 재요청을 위한 변수입니다.*/
 		int num=0;
 		System.out.println("회원 정보 삭제입니다.");
 		do {
@@ -171,6 +130,7 @@ public class UserRegister implements UserInterface {
 				System.out.println("로그인이 필요한 구간입니다.");
 				return;
 			}else
+				/**갑작스런 삭제를 방지하기위해 num을 사용하여 재요청을 한 뒤에 삭제를 합니다.*/
 				System.out.println("계정을 정말 삭제하시겠습니까?/n1.네   2.아니요");
 			 	num=sc.nextInt();
 			 if (num==1) {
@@ -187,17 +147,22 @@ public class UserRegister implements UserInterface {
 	
 	@Override
 	public void LaundryMenu() {
+		/** @param 세탁물 등록을 위한 메소드입니다.
+		 *  int num은 세탁물 선택을 위한 변수입니다.
+		 *  같은 사용자가 등록하면 전기록에 덮어쓰여집니다.
+		 *  등록을 완료하면 사용자가 등록한 정보를 출력합니다.*/
 		int num=0;
 		if (login==null) {
 			System.out.println("로그인이 필요합니다.");
 			return;
 			}else
-			do {
+			do {/**@param 잘못입력했을 경우 반복됩니다.*/
 				System.out.println("----메뉴를 선택하세요----");
 				System.out.println("1. 표준 세탁\n2. 드라이클리닝\n3. 이불 세탁");
 				num=sc.nextInt();
 				;
 				switch(num) {
+				/**@param 재방문이 있을 수 있기에 set()을 사용하였습니다.*/
 				case 1:
 					System.out.println("세탁물의 무게를 입력해주세요");
 					laundry.setType("표준 세탁");
@@ -227,18 +192,25 @@ public class UserRegister implements UserInterface {
 		System.out.println("등록이 완료되었습니다.");
 	}
 	@Override
-	public void Mypage() { ///[1] 내정보를 먼저 불러옵니다
+	public void Mypage() { 
+		/**@param 사용자의 정보를 확인하기 위한 메소드입니다.
+		 *int num은 마이페이지에서 선택하기 위한 변수입니다.
+		*/
 		int num=0;
 		if(login==null) {
 			System.out.println("로그인이 필요합니다.");
 			return;
 		}else
+			/**현재 사용자의 정보나 세탁물 정보를 확인할수있습니다.*/
 			System.out.println("마이 페이지 입니다./n 1.개인정보    2.세탁물정보");
 			num=sc.nextInt();
 			if (num==1) {
+				/**사용자 정보는 비밀번호를 제외한 정보를 볼수있게 했습니다*/
 				System.out.println("정보를 출력합니다.");
 				System.out.println(login);
 				}else if(num==2) {
+					/**세탁물 정보는 타입, 무게 또는 벌, 가격을 볼수있게 했습니다
+					 *세탁물을 등록을 안하고 확인을 하면 Cloth laundry에 의해 기본값으로 출력됩니다. */
 					System.out.println("세탁물정보입니다.");
 					System.out.println(laundry);
 					
@@ -248,6 +220,7 @@ public class UserRegister implements UserInterface {
 	}
 	@Override
 	public void EveryInfo() {
+		/** @param 모든 사용자와 세탁물을 볼수있는 메소드입니다.*/
 		System.out.println("모든정보를 출력합니다.");
 		Iterator<User> it=userList.iterator();
 		Iterator<Cloth> it2=clothList.iterator();
@@ -260,6 +233,7 @@ public class UserRegister implements UserInterface {
 				System.out.println(cloth);
 				System.out.println("------------");
 			}catch(NoSuchElementException e){
+				/**세탁물을 한번도 등록한 사람이 아니라면 예외처리를 사용해 메세지를 출력*/
 				System.out.println("등록된 세탁물이없습니다.!! ");
 			}
 		}
@@ -267,12 +241,15 @@ public class UserRegister implements UserInterface {
 	}
 	
 	public void Logout() {
+		/**@param 로그아웃을 할 수 있는 메소드입니다.
+		 *int num은 재요청을 위한 변수입니다.*/
 		if(login==null) {
 			System.out.println("로그인을 먼저해주세요");
 		}else
 			System.out.println("로그 아웃하시겠습니까? /n 1.네   2.아니요");
 			int num=sc.nextInt();
 			if (num==1) {
+				/**로그아웃을 할 경우 login의 값이 null값으로 되며 다른 메뉴를 사용할수없습니다.*/
 				login=null;
 			}else System.out.println("메인으로 돌아갑니다.");
 	}
@@ -280,7 +257,11 @@ public class UserRegister implements UserInterface {
 	
 	@Override
 	public User findById(String id, String password) {
+		/**@param 로그인을 위한 메소드입니다.
+		 * 또한 id와 password가 들어가 있는 userList를 출력합니다. 
+		 */  
 		for(User u:userList) {
+			/**userList에 String id와 password가 동일한 배열에 들어가있는지 확인합니다.*/
 			if(u.getId().equals(id) && u.getPassword().equals(password)) {
 				return u;
 			}

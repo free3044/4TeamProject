@@ -1,20 +1,18 @@
 package laundryroom;
 import java.util.*;
-/** LaundryStore class는 기본적인 메뉴와 그것을 고를 수 있는 클래스입니다.
- * 1. showMenu()
- * 	- 메뉴에 대해 선택 할 수 있는 메소드입니다.
- * 2. main()
- * 	- Scanner sc은 콘솔에 입역받기위한 객체선언입니다.
- * 	- UserRegister ur은 UserRegister class에서 메소드를 받기위한 객체선언입니다.
- * 	- int num 은 메뉴를 선택하기위한 변수입니다.
- * 	- int num2는 회원정보의 수정과 삭제를 선택할 수 있는 변수입니다.
- *  - switch case문과 do while문을 사용하여 한번의 선택이후에도 계속 선택할수 있게 했습니다.
- * 	- case 5는 UpdateUser(),deleteUser() 두개의 메소드를 이용하였습니다.
- * 	- 9번을 누를시 종료되도록 했습니다. 
+/** LaundryStore에 대한 클래스 메인메소드
  * */
+ 
 public class LaundryStore {
-	
+	/** 
+	 * LaundryStore class는 기본적인 메뉴와 그것을 고를 수 있는 클래스입니다.
+	 */
 	public static void showMenu() {
+	/**
+	 * 1. showMenu()
+	 * 	- 메뉴에 대해 선택 할 수 있는 메소드입니다.
+	 * */	
+		
 		System.out.println("------메뉴를 선택하세요------");
 		System.out.println("--------1.회원가입--------");
 		System.out.println("--------2.로 그 인--------");
@@ -27,9 +25,17 @@ public class LaundryStore {
 		System.out.println("------------------------");
 	}
 	
-	
-	//옷부분에서 반복되는 코드를 없애고 한곳으로 몰수있을까?
 	public static void main(String[] args) {
+	/** 
+	 * 	@param main()
+	 * 	- Scanner sc은 콘솔에 입역받기위한 객체선언입니다.
+	 * 	- UserRegister ur은 UserRegister class에서 메소드를 받기위한 객체선언입니다.
+	 * 	- int num 은 메뉴를 선택하기위한 변수입니다.
+	 * 	- int num2는 회원정보의 수정과 삭제를 선택할 수 있는 변수입니다.
+	 *  - switch case문과 do while문을 사용하여 한번의 선택이후에도 계속 선택할수 있게 했습니다.
+	 * 	- case 5는 UpdateUser(),deleteUser() 두개의 메소드를 이용하였습니다.
+	 * 	- 9번을 누를시 종료되도록 했습니다. 
+	 * */	
 		
 		Scanner sc=new Scanner(System.in);
 		UserRegister ur=new UserRegister();
