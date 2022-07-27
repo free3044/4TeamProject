@@ -22,8 +22,8 @@ public  class Cloth {
 	}
 	public String toString() {
 		/**@param 세탁물의 정보를 출력합니다.*/
-		return "세탁물 정보: "+type+"\n세탁물 무게: "+weight+"\n가격: "+price+"원 입니다.";
-	} 
+		return "세탁물 정보 : "+type+"\n세탁물 무게 : "+weight+"kg/EA"+"\n가격 : "+price+"원 입니다.";
+	}
 	public User getUser() {
 		/**사용자 getter--*/
 		return user;

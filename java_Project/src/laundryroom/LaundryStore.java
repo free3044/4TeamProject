@@ -11,7 +11,7 @@ public class LaundryStore {
 	/**
 	 * 1. showMenu()
 	 * 	- 메뉴에 대해 선택 할 수 있는 메소드입니다.
-	 * */	
+	 * */
 		
 		System.out.println("------메뉴를 선택하세요------");
 		System.out.println("--------1.회원가입--------");
@@ -28,7 +28,7 @@ public class LaundryStore {
 	public static void main(String[] args) {
 	/** 
 	 * 	@param main()
-	 * 	- Scanner sc은 콘솔에 입역받기위한 객체선언입니다.
+	 * 	- Scanner sc은 콘솔에 입력받기위한 객체선언입니다.
 	 * 	- UserRegister ur은 UserRegister class에서 메소드를 받기위한 객체선언입니다.
 	 * 	- int num 은 메뉴를 선택하기위한 변수입니다.
 	 * 	- int num2는 회원정보의 수정과 삭제를 선택할 수 있는 변수입니다.
@@ -57,7 +57,7 @@ public class LaundryStore {
 				ur.Mypage();
 				break;
 			case 5:
-				System.out.println("회원정보 수정 및 삭제 입니다. \n 1.수정   2.삭제");
+				System.out.println("회원정보 수정 및 삭제 입니다.\n 1.수정   2.삭제");
 				int num2=sc.nextInt();
 				if (num2==1) {
 					ur.UpdateUser();
@@ -73,6 +73,8 @@ public class LaundryStore {
 			case 7:
 				ur.Logout();
 				break;
+			case 8:
+				System.out.println("메뉴에 없는번호입니다.");
 			}
 		}while(num!=9);
 		

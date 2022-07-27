@@ -61,6 +61,9 @@ public class UserRegister implements UserInterface {
  *  	- EveryInfo()를 제외한 모든 메소드는 로그인을 통해야 작동됩니다.*/
 		boolean bl=false; 
 		boolean bl2=false; 
+		if(userList.isEmpty()) {
+			System.out.println("회원가입을 먼저 해주세요");
+		}else
 		while(!(bl==true && bl2==true)) {
 			System.out.println("Id를 입력해 주세요=>");
 			String id=sc.next();
@@ -75,7 +78,7 @@ public class UserRegister implements UserInterface {
 					 login=findById(id,password);
 					 System.out.println(userList.get(i).getName()+"님");
 				 	 System.out.println("환영합니다.");
-				} 
+				}
 			}
 		}
 	}
@@ -114,7 +117,7 @@ public class UserRegister implements UserInterface {
 				int phoneNumber=sc.nextInt();
 				login.setPhoneNumber(phoneNumber);
 				break;
-			}else System.out.println("다시입력해 주세요.");
+			}else System.out.println("다시 입력해 주세요.");
 		}while(num!=9);
 		System.out.println("변경이 완료되었습니다!!");
 		
@@ -131,7 +134,7 @@ public class UserRegister implements UserInterface {
 				return;
 			}else
 				/**갑작스런 삭제를 방지하기위해 num을 사용하여 재요청을 한 뒤에 삭제를 합니다.*/
-				System.out.println("계정을 정말 삭제하시겠습니까?/n1.네   2.아니요");
+				System.out.println("계정을 정말 삭제하시겠습니까?\n1.네   2.아니요");
 			 	num=sc.nextInt();
 			 if (num==1) {
 				 System.out.println("그동안 이용해주셔서 감사합니다.");
@@ -141,7 +144,7 @@ public class UserRegister implements UserInterface {
 				 System.out.println("취소하였습니다.");
 				 break;
 			 }else 
-				 System.out.println("다시입력해 주세요.");
+				 System.out.println("다시 입력해 주세요.");
 		}while(num!=9);
 	}
 	
@@ -170,7 +173,7 @@ public class UserRegister implements UserInterface {
 					laundry.setPrice(laundry.getWeight()*1000);
 					break;
 				case 2:
-					System.out.println("세탁물의 무게를 입력해주세요");
+					System.out.println("세탁물의 갯수를 입력해주세요");
 					laundry.setType("드라이클리닝");
 					laundry.setWeight(sc.nextInt());
 					laundry.setPrice(laundry.getWeight()*5000);
@@ -188,7 +191,7 @@ public class UserRegister implements UserInterface {
 		
 		Cloth cloth=new Cloth(laundry.getType() ,laundry.getWeight() ,laundry.getPrice(), login);
 		clothList.add(cloth);
-		System.out.println(laundry.getType()+"이며 \n무게는"+laundry.getWeight()+"Kg\n"+"가격은 "+laundry.getPrice()+"원");
+		System.out.println(laundry.getType()+"이며 \n무게(갯수)는"+laundry.getWeight()+"Kg(EA)\n"+"가격은 "+laundry.getPrice()+"원");
 		System.out.println("등록이 완료되었습니다.");
 	}
 	@Override
@@ -202,7 +205,7 @@ public class UserRegister implements UserInterface {
 			return;
 		}else
 			/**현재 사용자의 정보나 세탁물 정보를 확인할수있습니다.*/
-			System.out.println("마이 페이지 입니다./n 1.개인정보    2.세탁물정보");
+			System.out.println("마이 페이지 입니다.\n 1.개인정보   2.세탁물정보");
 			num=sc.nextInt();
 			if (num==1) {
 				/**사용자 정보는 비밀번호를 제외한 정보를 볼수있게 했습니다*/
@@ -222,19 +225,22 @@ public class UserRegister implements UserInterface {
 	public void EveryInfo() {
 		/** @param 모든 사용자와 세탁물을 볼수있는 메소드입니다.*/
 		System.out.println("모든정보를 출력합니다.");
+		System.out.println("-------------------");
+		System.out.println("회원 정보");
 		Iterator<User> it=userList.iterator();
 		Iterator<Cloth> it2=clothList.iterator();
 		while(it.hasNext() || it2.hasNext()) {
 			User user=it.next();
 			System.out.println(user);
-			System.out.println("세탁물정보");
+			System.out.println("-------------------");
+			System.out.println("세탁물 정보");
 			try {
 				Cloth cloth=it2.next();
 				System.out.println(cloth);
-				System.out.println("------------");
+				System.out.println("-------------------");
 			}catch(NoSuchElementException e){
 				/**세탁물을 한번도 등록한 사람이 아니라면 예외처리를 사용해 메세지를 출력*/
-				System.out.println("등록된 세탁물이없습니다.!! ");
+				System.out.println("등록된 세탁물이 없습니다.!! ");
 			}
 		}
 			
@@ -245,8 +251,9 @@ public class UserRegister implements UserInterface {
 		 *int num은 재요청을 위한 변수입니다.*/
 		if(login==null) {
 			System.out.println("로그인을 먼저해주세요");
+			return;
 		}else
-			System.out.println("로그 아웃하시겠습니까? /n 1.네   2.아니요");
+			System.out.println("로그아웃 하시겠습니까?\n 1.네   2.아니요");
 			int num=sc.nextInt();
 			if (num==1) {
 				/**로그아웃을 할 경우 login의 값이 null값으로 되며 다른 메뉴를 사용할수없습니다.*/
